@@ -10,12 +10,14 @@ from .serializers import MenuItemSerializer
 
 # Handles GET (list) and POST (create)
 class MenuItemsView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
 
 
 # Handles GET (single), PUT, DELETE
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
 

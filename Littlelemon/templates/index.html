@@ -1,10 +1,64 @@
 {% load static %}
 <html>
-   <head>
-      <title>Capstone Project</title>
-   </head>
-   <body>
-      <h1 style="text-align:center;">Welcome ToLittleLemon Restaurant</h1>
-      <img src="{% static 'restaurant/littlelemon.jpg' %}">
-   </body>
+
+<head>
+   <title>Capstone Project</title>
+</head>
+
+<body>
+   <style>
+      body {
+         margin: 0;
+         font-family: Arial, sans-serif;
+         background: linear-gradient(to right, #f8f9fa, #e9f5ec);
+      }
+
+      .container {
+         text-align: center;
+         padding: 60px 20px;
+      }
+
+      h1 {
+         color: #2c3e50;
+         font-size: 36px;
+         margin-bottom: 20px;
+      }
+
+      p {
+         color: #555;
+         font-size: 18px;
+         margin-bottom: 30px;
+      }
+
+      img {
+         width: 300px;
+         height: auto;
+         border-radius: 15px;
+         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn {
+         display: inline-block;
+         margin-top: 30px;
+         padding: 12px 25px;
+         font-size: 16px;
+         color: white;
+         background-color: #27ae60;
+         text-decoration: none;
+         border-radius: 8px;
+         transition: 0.3s;
+      }
+
+      .btn:hover {
+         background-color: #219150;
+      }
+   </style>
+   <div class="container">
+      <h1>Welcome To Little Lemon Restaurant</h1>
+      <p>Fresh ingredients, delicious meals, and a cozy atmosphere 🍋</p>
+
+      <img src="{% static 'restaurant/littlelemon.jpg' %}" alt="Little Lemon Restaurant">
+   </div>
+</body>
+
 </html>

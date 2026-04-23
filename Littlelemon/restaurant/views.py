@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics, viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from .models import Booking, Menu
 from .serializers import BookingSerializer, MenuSerializer
 
@@ -12,13 +12,14 @@ def index(request):
 
 # Handles GET (list) and POST (create)
 class MenuItemView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
 
 # Handles GET (single), PUT, DELETE
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
