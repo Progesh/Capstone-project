@@ -61,6 +61,7 @@ DATABASES = {
 ### 5. Apply migrations
 
 ```bash
+cd littlelemon
 python manage.py migrate
 ```
 
