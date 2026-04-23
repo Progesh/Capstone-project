@@ -21,12 +21,14 @@ from django.contrib import admin
 from django.db import router
 from django.urls import path, include
 from restaurant.views import BookingViewSet
+from django.views.generic import RedirectView
 
 
 router = DefaultRouter()
 router.register("tables", BookingViewSet)
 
 urlpatterns = [
+    path("", RedirectView.as_view(url="/restaurant/", permanent=False)),
     path("admin/", admin.site.urls),
     path("api/", include("LittleLemonAPI.urls")),
     path("restaurant/", include("restaurant.urls")),
