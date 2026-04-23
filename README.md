@@ -30,6 +30,7 @@ cd Capstone-project
 ```bash
 python -m venv .venv
 python3 -m venv .venv            # If using python version 3+
+
 source .venv/bin/activate        # Linux / macOS
 .venv\Scripts\activate           # Windows
 ```
