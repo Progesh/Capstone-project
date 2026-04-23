@@ -84,7 +84,7 @@ The server starts at `http://127.0.0.1:8000/`
 ## Running Tests
 
 ```bash
-python manage.py test restaurant
+python manage.py test
 
 ```
 # Littlelemon API Documentation
